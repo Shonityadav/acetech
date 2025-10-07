@@ -1,0 +1,503 @@
+:root {
+  --primary-color: #F47C20;    /* Warm Orange from logo */
+  --secondary-color: #007A3D;  /* Deep Green accent */
+  --accent-color: #FFD700;     /* Bright Yellow for highlights */
+  
+  --background-color: #0B0B0B; /* Rich dark charcoal */
+  --section-background-alt: #151515;
+  --card-background: #1E1E1E;
+  --text-color: #FFFFFF;
+  --text-muted: #B5B5B5;
+  --border-color: rgba(255, 255, 255, 0.08);
+}
+
+
+
+/* GLOBAL STYLES */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+    padding: 5rem 15px 0;
+}
+
+
+/* === ENHANCED GLITTER BACKGROUND EFFECT === */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+        radial-gradient(2px 2px at 10% 20%, rgba(0, 191, 255, 0.8) 0%, transparent 70%),
+        radial-gradient(2px 2px at 30% 80%, rgba(57, 255, 20, 0.7) 0%, transparent 70%),
+        radial-gradient(1.5px 1.5px at 70% 30%, rgba(255, 255, 255, 0.6) 0%, transparent 70%),
+        radial-gradient(1px 1px at 90% 60%, rgba(0, 191, 255, 0.8) 0%, transparent 70%),
+        radial-gradient(1.5px 1.5px at 50% 50%, rgba(57, 255, 20, 0.5) 0%, transparent 70%);
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    opacity: 0.8;
+    animation: glitterMove 6s linear infinite, glitterTwinkle 2s ease-in-out infinite alternate;
+}
+
+@keyframes glitterMove {
+    0% { background-position: 0 0, 150px 50px, 50px 150px, 200px 100px, 100px 200px; }
+    50% { background-position: 150px 100px, 0 50px, 100px 0, 250px 150px, 50px 250px; }
+    100% { background-position: 0 0, 150px 50px, 50px 150px, 200px 100px, 100px 200px; }
+}
+
+@keyframes glitterTwinkle {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+
+/* NAVIGATION BAR */
+.navbar {
+    background-color: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Navbar background becomes opaque on scroll */
+.navbar.scrolled {
+    background-color: rgba(10, 10, 10, 0.95);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+.logo {
+    height: 100%;
+    width: 110px;
+}
+
+.nav-link {
+    color: var(--text-color) !important;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Underline hover effect for nav links */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* HERO SECTION */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 8rem;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.hero-text p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: var(--text-color);
+    font-weight: 300;
+}
+
+/* BUTTONS */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #000;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 12px 28px;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(255, 140, 0, 0.3);
+}
+
+/* Pulse Effect for Hero Button */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 140, 0, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 140, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 140, 0, 0); }
+}
+
+.pulse-btn {
+    animation: pulse 2.5s infinite;
+}
+
+/* SECTION TITLES */
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 15px;
+    width: fit-content;
+    margin: 0 auto 4rem auto;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+/* CARDS */
+.card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.animated-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-body { padding: 1.25rem; }
+.card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+.card-text {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+/* POPULAR/SLIDER CARDS */
+.popular-card {
+    /* .popular-card now inherits base .card styles */
+    overflow: hidden; /* Ensure zoomed image does not bleed out */
+    cursor: pointer;
+}
+
+.popular-card .card-img-top {
+    border-bottom: none; /* No card body means no need for image border */
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.popular-card:hover {
+    /* Consistent hover effect with other cards */
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.popular-card:hover .card-img-top {
+    transform: scale(1.1); /* Nice zoom on the image */
+}
+
+/* ABOUT SECTION & BADGES */
+.about-section {
+    background-color: var(--card-background);
+    border-radius: 15px;
+}
+.tech-badge {
+    background-color: rgba(255, 140, 0, 0.1) !important;
+    color: var(--primary-color) !important;
+    border: 1px solid rgba(255, 140, 0, 0.2);
+    padding: 0.6em 1.2em;
+    font-weight: 600;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+/* EBOOK SLIDER SECTION */
+.book-slider-section .section-title {
+    text-align: left;
+    margin-left: 0;
+    margin-bottom: 2rem;
+}
+
+.book-slider-section .carousel-control-prev,
+.book-slider-section .carousel-control-next {
+    background-color: rgba(255, 140, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.7;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.book-slider-section .carousel-control-prev:hover,
+.book-slider-section .carousel-control-next:hover {
+    background-color: var(--primary-color);
+    opacity: 1;
+}
+
+.book-slider-section .carousel-control-prev {
+    left: -25px;
+}
+
+.book-slider-section .carousel-control-next {
+    right: -25px;
+}
+
+
+
+/* FOOTER */
+.footer {
+    background-color: var(--card-background);
+    padding: 4rem 0 2rem;
+    border-top: 1px solid var(--border-color);
+    position: relative;
+    z-index: 1;
+}
+.footer h5 {
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+.footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+.footer a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+.footer-hr {
+    border-color: var(--border-color);
+    margin: 2rem 0;
+}
+.social-icons li {
+    display: inline-block;
+    margin-right: 1.5rem;
+}
+.social-icons a {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+.social-icon:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* ANIMATIONS */
+/* 1. Page Load Animation for Hero Section */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animate-on-load {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 1; /* Start hidden before animation */
+}
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+
+/* 2. Scroll Animation for other sections */
+.hidden, .hidden-left, .hidden-right {
+    opacity: 0;
+    transition: opacity 1s ease-out, transform 0.8s ease-out;
+}
+.hidden {
+    transform: translateY(30px);
+}
+.hidden-left {
+    transform: translateX(-100px);
+}
+.hidden-right {
+    transform: translateX(100px);
+}
+.show {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 992px) {
+    .hero-text h1 { font-size: 4rem; }
+    .hero-text p { font-size: 1.2rem; }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 { font-size: 3rem; }
+    .hero-text p { font-size: 1rem; }
+    .card-img-top { height: 180px; }
+    .card {
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-toggler {
+        display: none;
+    }
+}
+
+/* === RESPONSIVE CENTERING FIXES FOR MOBILE VIEWPORT === */
+@media (max-width: 768px) {
+
+  /* Ensure hero text and buttons stay centered */
+  .hero-text {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  /* Center navbar elements when collapsed */
+  .navbar-collapse {
+    text-align: center;
+  }
+
+  .navbar-nav {
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  /* Fix section text alignment */
+  section, 
+  .book-section, 
+  .about-section, 
+  .book-slider-section {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  /* Prevent cards from floating left */
+  .card {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Fix footer text and social icons alignment */
+  .footer, 
+  .footer .container, 
+  .footer .row {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  /* Keep slider items centered */
+  .slider {
+    display: flex;
+    justify-content: center;
+  }
+
+  .slide-track {
+    justify-content: center;
+    width: auto;
+    animation: none; /* optional: stop scroll on very small screens */
+  }
+
+  .slide {
+    padding: 10px;
+  }
+}
+
+.slider {
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: auto;
+}
+
+.slider .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+}
+
+.slider .slide {
+    padding: 15px;
+    width: 250px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 7));
+    }
+}
+
+.text-gradient {
+    background: linear-gradient(to right, var(--accent-color), var(--secondary-color), var(--primary-color));
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text-gradient-animation 4s ease infinite;
+}
+
+@keyframes text-gradient-animation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
