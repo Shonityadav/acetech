@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bhumika Prakashan | Digital Library</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ8g359qN/W8j+wW6gR1C3Sj9G4B5FqQ5G9G5g5N5N5N5" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top shadow-lg" id="main-navbar">
-        <div class="container">
+    <!-- Redesigned Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="main-navbar">
+        <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="logo.png" alt="Bhumika Prakashan Logo" class="logo">
+                <!-- Using a placeholder for the logo -->
+                <img src="logo.png" alt="Bhumika Prakashan Logo"
+                    class="logo">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#hero"><i class="fas fa-home me-1"></i> Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Test-Paper"><i class="fas fa-info-circle me-1"></i> Test-Paper</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#new-arrivals"><i class="fas fa-book-reader me-1"></i> Ebooks</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact"><i class="fas fa-envelope me-1"></i> Contact</a></li>
+                <ul class="navbar-nav ms-auto navbarNav">
+                    <li class="nav-item"><a class="nav-link" href="#hero">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">FEATURES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#new-arrivals">EBOOKS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
                 </ul>
             </div>
         </div>
@@ -35,41 +43,46 @@
             <div class="row justify-content-center">
                 <div class="col-12 hero-text">
                     <h1 class="animate-on-load text-gradient">Step into the World of Bhumika Prakashan</h1>
-                    <p class="mt-3 animate-on-load delay-1">Discover a universe of stories, information, and inspiration. Your next great read is just a click away.</p>
-                    <a href="#new-arrivals" class="btn btn-primary btn-lg mt-4 pulse-btn animate-on-load delay-2">Start Reading</a>
+                    <p class="mt-3 animate-on-load delay-1">Discover a universe of stories, information, and
+                        inspiration. Your next great read is just a click away.</p>
+                    <a href="#new-arrivals" class="btn btn-primary btn-lg mt-4 pulse-btn animate-on-load delay-2">Start
+                        Reading</a>
                 </div>
             </div>
         </div>
     </header>
 
     <main class="container py-5">
-        <section class="book-section py-5 text-center" id="Test-Paper">
-            <h2 class="section-title text-center mb-5">Our Test Papers <i class="fas fa-bookmark ms-2"></i></h2>
+        <section class="book-section py-5 text-center" id="features">
+            <h2 class="section-title text-center mb-5 text-gradient">Our Features</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100 animated-card slide-left">
                         <div class="card-body">
-                            <h5 class="card-title">Test Paper 1</h5>
-                            <p class="card-text">A practical guide to remote work, freedom, and technology-driven careers.</p>
-                            <a href="#" class="btn btn-primary">Download Now</a>
+                            <h5 class="card-title">Teacher Manual</h5>
+                            <p class="card-text">Comprehensive guides and resources for educators to effectively teach
+                                various subjects.</p>
+                            <a href="#" class="btn btn-primary">Explore</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100 animated-card">
                         <div class="card-body">
-                            <h5 class="card-title">Test Paper 2</h5>
-                            <p class="card-text">Exploring the latest findings on dark matter and the universe's structure.</p>
-                            <a href="#" class="btn btn-primary">Download Now</a>
+                            <h5 class="card-title">Ebooks</h5>
+                            <p class="card-text">A vast digital library of books available for reading on any device,
+                                anywhere.</p>
+                            <a href="#" class="btn btn-primary">Browse Ebooks</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100 animated-card slide-right">
                         <div class="card-body">
-                            <h5 class="card-title">Test Paper 3</h5>
-                            <p class="card-text">How philosophical teachings can inform modern programming principles.</p>
-                            <a href="#" class="btn btn-primary">Download Now</a>
+                            <h5 class="card-title">Test Paper Generator</h5>
+                            <p class="card-text">Create custom test papers from a wide range of questions to suit your
+                                needs.</p>
+                            <a href="#" class="btn btn-primary">Generate Now</a>
                         </div>
                     </div>
                 </div>
@@ -77,34 +90,40 @@
         </section>
 
         <section class="book-section py-5 text-center" id="new-arrivals">
-            <h2 class="section-title text-center mb-5">New Digital Releases <i class="fas fa-bookmark ms-2"></i></h2>
+            <h2 class="section-title text-center mb-5 text-gradient">New Digital Releases</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100 animated-card slide-left">
-                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Ebook Cover 1">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            class="card-img-top" alt="Ebook Cover 1">
                         <div class="card-body">
                             <h5 class="card-title">The Digital Nomad's Code</h5>
-                            <p class="card-text">A practical guide to remote work, freedom, and technology-driven careers.</p>
+                            <p class="card-text">A practical guide to remote work, freedom, and technology-driven
+                                careers.</p>
                             <a href="#" class="btn btn-primary">Read Now</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100 animated-card">
-                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Ebook Cover 2">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            class="card-img-top" alt="Ebook Cover 2">
                         <div class="card-body">
                             <h5 class="card-title">Cosmic Web Theory</h5>
-                            <p class="card-text">Exploring the latest findings on dark matter and the universe's structure.</p>
+                            <p class="card-text">Exploring the latest findings on dark matter and the universe's
+                                structure.</p>
                             <a href="#" class="btn btn-primary">Read Now</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100 animated-card slide-right">
-                        <img src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Ebook Cover 3">
+                        <img src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            class="card-img-top" alt="Ebook Cover 3">
                         <div class="card-body">
                             <h5 class="card-title">Ancient Wisdom, Modern Code</h5>
-                            <p class="card-text">How philosophical teachings can inform modern programming principles.</p>
+                            <p class="card-text">How philosophical teachings can inform modern programming principles.
+                            </p>
                             <a href="#" class="btn btn-primary">Read Now</a>
                         </div>
                     </div>
@@ -113,11 +132,16 @@
         </section>
 
         <section class="about-section text-center py-5" id="about">
-            <h2 class="section-title mb-4">Our Digital Reading Mission <i class="fas fa-graduation-cap ms-2"></i></h2>
+            <h2 class="section-title mb-4 text-gradient">Our Digital Reading Mission</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <p class="lead text-color">
-                        Bhumika Prakashan is dedicated to providing instant access to high-quality literature and educational e-books. We are building a sustainable, accessible, and vast digital library for readers worldwide. Our platform is designed for the modern reader, offering a seamless experience across all devices. We believe in the power of knowledge and strive to make it universally available. Join us in our mission to create a more literate and informed world, one digital book at a time.
+                        Bhumika Prakashan is dedicated to providing instant access to high-quality literature and
+                        educational e-books. We are building a sustainable, accessible, and vast digital library for
+                        readers worldwide. Our platform is designed for the modern reader, offering a seamless
+                        experience across all devices. We believe in the power of knowledge and strive to make it
+                        universally available. Join us in our mission to create a more literate and informed world, one
+                        digital book at a time.
                     </p>
                     <div class="mt-4">
                         <span class="badge tech-badge">Digital Fiction</span>
@@ -130,21 +154,69 @@
         </section>
 
         <section class="book-slider-section py-5" id="popular">
-            <h2 class="section-title">Popular Ebook Series <i class="fas fa-layer-group ms-2"></i></h2>
+            <h2 class="section-title text-gradient">Popular Ebook Series</h2>
             <div class="slider">
                 <div class="slide-track">
-                    <div class="slide"><div class="card popular-card"><img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Book 4"></div></div>
-                    <div class="slide"><div class="card popular-card"><img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Book 5"></div></div>
-                    <div class="slide"><div class="card popular-card"><img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Book 6"></div></div>
-                    <div class="slide"><div class="card popular-card"><img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Book 7"></div></div>
-                    <div class="slide"><div class="card popular-card"><img src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Book 8"></div></div>
-                    <div class="slide"><div class="card popular-card"><img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Book 9"></div></div>
-                    <div class="slide"><div class="card popular-card"><img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Book 4"></div></div>
-                    <div class="slide"><div class="card popular-card"><img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Book 5"></div></div>
-                    <div class="slide"><div class="card popular-card"><img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Book 6"></div></div>
-                    <div class="slide"><div class="card popular-card"><img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Book 7"></div></div>
-                    <div class="slide"><div class="card popular-card"><img src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Book 8"></div></div>
-                    <div class="slide"><div class="card popular-card"><img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Book 9"></div></div>
+                    <div class="slide">
+                        <div class="card popular-card"><img
+                                src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="card-img-top" alt="Book 4"></div>
+                    </div>
+                    <div class="slide">
+                        <div class="card popular-card"><img
+                                src="https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="card-img-top" alt="Book 5"></div>
+                    </div>
+                    <div class="slide">
+                        <div class="card popular-card"><img
+                                src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="card-img-top" alt="Book 6"></div>
+                    </div>
+                    <div class="slide">
+                        <div class="card popular-card"><img
+                                src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="card-img-top" alt="Book 7"></div>
+                    </div>
+                    <div class="slide">
+                        <div class="card popular-card"><img
+                                src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="card-img-top" alt="Book 8"></div>
+                    </div>
+                    <div class="slide">
+                        <div class="card popular-card"><img
+                                src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="card-img-top" alt="Book 9"></div>
+                    </div>
+                    <div class="slide">
+                        <div class="card popular-card"><img
+                                src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="card-img-top" alt="Book 4"></div>
+                    </div>
+                    <div class="slide">
+                        <div class="card popular-card"><img
+                                src="https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="card-img-top" alt="Book 5"></div>
+                    </div>
+                    <div class="slide">
+                        <div class="card popular-card"><img
+                                src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="card-img-top" alt="Book 6"></div>
+                    </div>
+                    <div class="slide">
+                        <div class="card popular-card"><img
+                                src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="card-img-top" alt="Book 7"></div>
+                    </div>
+                    <div class="slide">
+                        <div class="card popular-card"><img
+                                src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="card-img-top" alt="Book 8"></div>
+                    </div>
+                    <div class="slide">
+                        <div class="card popular-card"><img
+                                src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="card-img-top" alt="Book 9"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -154,75 +226,192 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4 text-center text-md-start">
-                    <h5>Digital Support Hub</h5>
-                    <p class="primary-color">Access our entire library anytime, anywhere. Your next read is waiting.</p>
+                    <h5 class="text-gradient">Digital Support Hub</h5>
+                    <p class="footer-text">Access our entire library anytime, anywhere. Your next read is waiting.</p>
                 </div>
                 <div class="col-md-4 mb-4 text-center text-md-start">
-                    <h5>Quick Access</h5>
+                    <h5 class="text-gradient">Quick Access</h5>
                     <ul class="list-unstyled">
                         <li><a href="#hero" class="footer-link">Home Portal</a></li>
                         <li><a href="#about" class="footer-link">Reading Mission</a></li>
                         <li><a href="#new-arrivals" class="footer-link">Ebook Catalog</a></li>
-                        <li><a href="#contact" class="footer-link">Technical Help</a></li>
+                        <li><a href="contact.html" class="footer-link">Technical Help</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 mb-4 text-center text-md-start">
-                    <h5>Social Sync</h5>
-                    <ul class="list-unstyled social-icons">
-                        <li><a href="#"><i class="fab fa-facebook-f social-icon"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter social-icon"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram social-icon"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin social-icon"></i></a></li>
+                <div class="col-md-4 mb-4 text-center ">
+                    <h5 class="text-center mb-3 text-gradient"> Social Sync</h5>
+                    <ul class="social-icons list-unstyled d-flex justify-content-center">
+                        <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                        <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+                        <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                        <li><a href="#"><i class="bi bi-twitter"></i></a></li>
                     </ul>
+
                 </div>
             </div>
             <hr class="footer-hr">
             <div class="row">
                 <div class="col-12 text-center pt-3">
-                    <p class="primary-color small">&copy; 2025 Bhumika Prakashan. All Digital Rights Reserved. | Library Access: Online</p>
+                    <p class=" small">&copy; 2025 Bhumika Prakashan. All Digital Rights Reserved. | Library Access:
+                        Online</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script>
-        // CLIENT-SIDE JS FOR SCROLL ANIMATIONS (for elements below the fold)
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                } else {
-                    entry.target.classList.remove('show');
-                }
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- START: New Navbar Scroll Animation ---
+            const navbar = document.getElementById('main-navbar');
+            if (navbar) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+            }
+            // --- END: New Navbar Scroll Animation ---
+
+
+            const animatedEls = document.querySelectorAll('.animated-card');
+
+            // safe scroll direction tracker (won't flip when no movement)
+            let lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+            let scrollDir = 'down';
+            window.addEventListener('scroll', () => {
+                const st = window.pageYOffset || document.documentElement.scrollTop;
+                if (st > lastScroll) scrollDir = 'down';
+                else if (st < lastScroll) scrollDir = 'up';
+                lastScroll = st <= 0 ? 0 : st;
+            }, { passive: true });
+
+            // initialize enter-delay and initial off positions
+            animatedEls.forEach((el, idx) => {
+                el.style.setProperty('--enter-delay', `${idx * 200}ms`);
+                if (el.classList.contains('slide-left')) el.classList.add('off-left');
+                else if (el.classList.contains('slide-right')) el.classList.add('off-right');
+                else el.classList.add('off-up');
+                // store timeout id container
+                el._exitTimeout = null;
             });
-        }, {
-            threshold: 0.1 // Trigger when 10% of the element is visible
-        });
 
-        // Select all elements that should fade in on scroll
-        const scrollAnimateElements = document.querySelectorAll('.animated-card, .section-title, .about-section, .book-slider-section');
-        scrollAnimateElements.forEach((el) => {
-            if (el.classList.contains('slide-left')) {
-                el.classList.add('hidden-left');
-            } else if (el.classList.contains('slide-right')) {
-                el.classList.add('hidden-right');
-            } else {
-                el.classList.add('hidden');
+            // Helper to clear previous exit timeout for an element
+            function clearExitTimeout(el) {
+                if (el._exitTimeout) {
+                    clearTimeout(el._exitTimeout);
+                    el._exitTimeout = null;
+                }
             }
-            observer.observe(el);
-        });
 
-        // Add class to change navbar background on scroll
-        const navbar = document.getElementById('main-navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            // IntersectionObserver — slightly stricter threshold for stability
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const el = entry.target;
+                    const visible = entry.isIntersecting && entry.intersectionRatio > 0.15;
+
+                    if (visible) {
+                        // clear exit timers and make element visible
+                        clearExitTimeout(el);
+                        el.classList.add('visible');
+                        el.classList.remove('off-left', 'off-right', 'off-up', 'exit-left', 'exit-right', 'exit-up', 'exit-down');
+                        return;
+                    }
+
+                    // Not intersecting.
+                    clearExitTimeout(el);
+
+                    // Only perform exit animation when scrolling UP
+                    if (scrollDir === 'up') {
+                        // Add exit class to start the transform animation
+                        if (el.classList.contains('slide-left')) el.classList.add('exit-left');
+                        else if (el.classList.contains('slide-right')) el.classList.add('exit-right');
+                        else el.classList.add('exit-down');
+
+                        // After the transition finishes, clean everything up.
+                        el._exitTimeout = setTimeout(() => {
+                            el.classList.remove('visible'); // Remove visible now
+                            el.classList.remove('exit-left', 'exit-right', 'exit-up', 'exit-down');
+
+                            // Set the resting off-screen state
+                            if (el.classList.contains('slide-left')) el.classList.add('off-left');
+                            else if (el.classList.contains('slide-right')) el.classList.add('off-right');
+                            else el.classList.add('off-up');
+
+                            el._exitTimeout = null;
+                        }, 650);
+                    } else {
+                        // Scrolling DOWN. The element is leaving the top.
+                        // We want it to just scroll off naturally.
+                        // We need to reset its state once it's off-screen.
+                        // Let's just remove 'visible'. This will cause a fade-out.
+                        // And then reset to 'off' state after a delay.
+                        el.classList.remove('visible');
+                        el._exitTimeout = setTimeout(() => {
+                            if (el.classList.contains('slide-left')) el.classList.add('off-left');
+                            else if (el.classList.contains('slide-right')) el.classList.add('off-right');
+                            else el.classList.add('off-up');
+                            el._exitTimeout = null;
+                        }, 450); // 450ms is the opacity transition duration
+                    }
+                });
+            }, {
+                threshold: [0.05, 0.1, 0.2], // you can simplify to a single value like 0.15 if you prefer
+                // rootMargin: '0px 0px -10% 0px' // optional: uncomment to trigger slightly earlier/later
+            });
+
+            animatedEls.forEach(el => observer.observe(el));
+
+            // Trigger initial check for elements already in view (keeps behavior identical to before)
+            setTimeout(() => {
+                animatedEls.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        el.classList.add('visible');
+                        el.classList.remove('off-left', 'off-right', 'off-up');
+                    }
+                });
+            }, 300);
+
+            const sections = document.querySelectorAll('header[id], section[id]');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+            const navObserver = new IntersectionObserver((entries) => {
+                let currentActive = '';
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        currentActive = entry.target.id;
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.parentElement.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === currentActive) {
+                        link.parentElement.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.5, rootMargin: "-50% 0px -50% 0px" });
+
+            sections.forEach(section => {
+                navObserver.observe(section);
+            });
+
+            const techBadges = document.querySelectorAll('.tech-badge');
+            techBadges.forEach(badge => {
+                badge.addEventListener('click', () => {
+                    alert(`You clicked on: ${badge.textContent}`);
+                });
+            });
         });
     </script>
 
+
+
 </body>
+
 </html>
