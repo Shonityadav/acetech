@@ -29,8 +29,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto navbarNav">
                     <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#features">FEATURES</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#new-arrivals">EBOOKS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ebook.html">EBOOKS</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
                 </ul>
             </div>
@@ -263,8 +263,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script>
+        <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Set Home as active
+            const homeLink = document.querySelector('.navbar-nav .nav-link[href="index.html"]');
+            if (homeLink) {
+                homeLink.parentElement.classList.add('active');
+            }
 
             // --- START: New Navbar Scroll Animation ---
             const navbar = document.getElementById('main-navbar');
