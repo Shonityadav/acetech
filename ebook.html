@@ -118,6 +118,84 @@
             if (ebookLink) {
                 ebookLink.parentElement.classList.add('active');
             }
+
+            const ebookContainer = document.getElementById('ebook-container');
+            const loader = document.getElementById('loader');
+            let isLoading = false;
+            let page = 1;
+            const booksPerPage = 16;
+
+            const allBooks = [
+                { title: 'Don Quixote', image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f', link: 'https://www.google.com/search?q=Don+Quixote+book' },
+                { title: 'A Tale of Two Cities', image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794', link: 'https://www.google.com/search?q=A+Tale+of+Two+Cities+book' },
+                { title: 'The Lord of the Rings', image: 'https://upload.wikimedia.org/wikipedia/en/e/e9/First_Single_Volume_Edition_of_The_Lord_of_the_Rings.gif', link: 'https://www.google.com/search?q=The+Lord+of+the+Rings+book' },
+                { title: 'The Little Prince', image: 'https://upload.wikimedia.org/wikipedia/en/0/05/Littleprince.JPG', link: 'https://www.google.com/search?q=The+Little+Prince+book' },
+                { title: 'Harry Potter and the Sorcerers Stone', image: 'https://upload.wikimedia.org/wikipedia/en/b/bf/Harry_Potter_and_the_Sorcerer%27s_Stone.jpg', link: 'https://www.google.com/search?q=Harry+Potter+and+the+Sorcerers+Stone+book' },
+                { title: 'And Then There Were None', image: 'https://upload.wikimedia.org/wikipedia/en/c/c8/AndThenThereWereNone.jpg', link: 'https://www.google.com/search?q=And+Then+There+Were+None+book' },
+                { title: 'Dream of the Red Chamber', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Hongloumeng_Qianlong_YZB.jpg/800px-Hongloumeng_Qianlong_YZB.jpg', link: 'https://www.google.com/search?q=Dream+of+the+Red+Chamber+book' },
+                { title: 'The Hobbit', image: 'https://upload.wikimedia.org/wikipedia/en/4/4a/TheHobbit_FirstEdition.jpg', link: 'https://www.google.com/search?q=The+Hobbit+book' },
+                { title: 'She: A History of Adventure', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/She_-_A_History_of_Adventure_1st_edition_book_cover.jpg/800px-She_-_A_History_of_Adventure_1st_edition_book_cover.jpg', link: 'https://www.google.com/search?q=She:+A+History+of+Adventure+book' },
+                { title: 'The Lion, the Witch and the Wardrobe', image: 'https://upload.wikimedia.org/wikipedia/en/8/86/TheLionWitchWardrobe%281stEd%29.jpg', link: 'https://www.google.com/search?q=The+Lion,+the+Witch+and+the+Wardrobe+book' },
+                { title: 'The Da Vinci Code', image: 'https://upload.wikimedia.org/wikipedia/en/6/6b/DaVinciCode.jpg', link: 'https://www.google.com/search?q=The+Da+Vinci+Code+book' },
+                { title: 'The Catcher in the Rye', image: 'https://via.placeholder.com/300x450.png?text=The+Catcher+in+the+Rye', link: 'https://www.google.com/search?q=The+Catcher+in+the+Rye+book' },
+                { title: 'The Alchemist', image: 'https://via.placeholder.com/300x450.png?text=The+Alchemist', link: 'https://www.google.com/search?q=The+Alchemist+book' },
+                { title: 'The Bridges of Madison County', image: 'https://via.placeholder.com/300x450.png?text=The+Bridges+of+Madison+County', link: 'https://www.google.com/search?q=The+Bridges+of+Madison+County+book' },
+                { title: 'Ben-Hur: A Tale of the Christ', image: 'https://via.placeholder.com/300x450.png?text=Ben-Hur', link: 'https://www.google.com/search?q=Ben-Hur:+A+Tale+of+the+Christ+book' },
+                { title: 'You Can Heal Your Life', image: 'https://via.placeholder.com/300x450.png?text=You+Can+Heal+Your+Life', link: 'https://www.google.com/search?q=You+Can+Heal+Your+Life+book' }
+            ];
+
+            function createBookCard(book) {
+                return `
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="card h-100 book-card">
+                            <img src="${book.image}" class="card-img-top" alt="${book.title}">
+                            <div class="card-body">
+                                <h5 class="card-title">${book.title}</h5>
+                            </div>
+                            <div class="card-footer">
+                                <a href="${book.link}" target="_blank" class="btn btn-primary">View Book</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            function loadBooks() {
+                if (isLoading) return;
+                isLoading = true;
+                loader.style.display = 'block';
+
+                setTimeout(() => {
+                    const startIndex = (page - 1) * booksPerPage;
+                    const endIndex = page * booksPerPage;
+                    const booksToLoad = allBooks.slice(startIndex, endIndex);
+
+                    if (booksToLoad.length > 0) {
+                        booksToLoad.forEach(book => {
+                            ebookContainer.innerHTML += createBookCard(book);
+                        });
+                        page++;
+                    }
+
+                    loader.style.display = 'none';
+                    isLoading = false;
+                }, 1000); // Simulate network delay
+            }
+
+            // Initial load
+            loadBooks();
+
+            window.addEventListener('scroll', () => {
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500 && !isLoading) {
+                   // Load more books when nearing the end of the page
+                   // To make it truly infinite, you would fetch from a server.
+                   // For this example, we'll just loop through the existing books.
+                    if (page > Math.ceil(allBooks.length / booksPerPage)) {
+                        page = 1; // Reset to loop
+                    }
+                    loadBooks();
+                }
+            });
         });
     </script>
 </body>
