@@ -30,6 +30,7 @@ body {
     line-height: 1.7;
     overflow-x: hidden;
     overflow-y: scroll;
+    
 }
 
 
@@ -273,9 +274,40 @@ body::before {
     background-color: var(--card-background);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     overflow: hidden;
+}
+
+.animated-card {
+  /* This tells the browser to animate changes to opacity and transform over 0.6 seconds */
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),border-color 0.4s ease-out, box-shadow 0.4s ease-out;
+}
+
+
+
+
+
+.animated-card.off-left {
+  opacity: 0;
+  transform: translateX(-105%);
+}
+
+/* For cards that should slide in from the right */
+.animated-card.off-right {
+  opacity: 0;
+  transform: translateX(105%);
+}
+
+/* For cards that should float up from the bottom (the default) */
+.animated-card.off-up {
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.animated-card.visible {
+  /* When visible, the card is fully opaque and in its original position */
+  opacity: 1;
+  transform: none; /* 'none' is equivalent to translateX(0) translateY(0) */
 }
 
 .animated-card:hover {
@@ -308,13 +340,7 @@ body::before {
     color: var(--text-muted);
 }
 
-/* POPULAR/SLIDER CARDS */
-.popular-card {
-    /* .popular-card now inherits base .card styles */
-    overflow: hidden;
-    /* Ensure zoomed image does not bleed out */
-    cursor: pointer;
-}
+
 
 .popular-card .card-img-top {
     border-bottom: none;
@@ -360,43 +386,6 @@ body::before {
     cursor: pointer;
 }
 
-/* EBOOK SLIDER SECTION */
-.book-slider-section .section-title {
-    text-align: left;
-    margin-bottom: 2rem;
-}
-
-.slider-container {
-    width: 100%;
-    overflow-x: hidden;
-}
-
-.book-slider-section .carousel-control-prev,
-.book-slider-section .carousel-control-next {
-    background-color: rgba(255, 140, 0, 0.5);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.7;
-    transition: opacity 0.3s ease, background-color 0.3s ease;
-}
-
-.book-slider-section .carousel-control-prev:hover,
-.book-slider-section .carousel-control-next:hover {
-    background-color: var(--primary-color);
-    opacity: 1;
-}
-
-.book-slider-section .carousel-control-prev {
-    left: -25px;
-}
-
-.book-slider-section .carousel-control-next {
-    right: -25px;
-}
-
 
 
 /* FOOTER */
@@ -432,6 +421,7 @@ body::before {
 
 .footer-link:hover {
     color: var(--primary-color);
+    text-decoration: underline;
 }
 
 .footer-hr {
@@ -444,18 +434,34 @@ body::before {
     margin-right: 1.5rem;
 }
 
-.footer .social-icons a i {
-    color: var(--text-color) !important;
-    font-size: 1.6rem;
-    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.4s ease;
+/*
+==============================================
+SOCIAL ICON HOVER COLORS
+==============================================
+*/
+
+/* 1. Add a smooth transition to all social icons for the color change */
+.social-icons a i {
+    transition: color 0.3s ease-in-out;
 }
 
-.footer .social-icons a:hover i {
-    color: var(--primary-color) !important;
-    transform: scale(1.2);
-    text-shadow: 0 0 10px rgba(244, 124, 32, 0.6);
+/* 2. Define the specific brand color for each icon on hover */
+
+.social-icons a:hover .bi-facebook {
+    color: #1877F2; /* Facebook Blue */
 }
 
+.social-icons a:hover .bi-instagram {
+    color: #E4405F; /* Instagram Pink */
+}
+
+.social-icons a:hover .bi-twitter {
+    color: #1DA1F2; /* Classic Twitter Blue */
+}
+
+.social-icons a:hover .bi-linkedin {
+    color: #0A66C2; /* LinkedIn Blue */
+}
 
 /* ANIMATIONS */
 /* 1. Page Load Animation for Hero Section */
@@ -630,11 +636,8 @@ body::before {
 
 
 
-/* subtle hover boost (keeps a fast/short transition so it doesn't conflict with scroll animation) */
-.animated-card:hover {
-    transform: translateY(-6px) scale(1.02);
-    transition: transform 220ms ease;
-}
+
+
 .custom-toggler {
     border: none !important;
     box-shadow: none !important;
@@ -787,3 +790,134 @@ body::before {
   align-items: center;
   justify-content: center;
 }
+
+/* 3D Carousel Enhancements */
+.book-carousel-container {
+            position: relative;
+            width: 90%;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0; /* Hides the carousel initially to prevent flickering */
+            transition: opacity 0.5s ease-in-out; 
+        }
+
+        .book-carousel-container.carousel-loaded {
+    opacity: 1;
+}
+
+        .new-book-carousel {
+            position: relative;
+            width: 100%;
+            height: 350px; /* Adjust height based on your book cover aspect ratio */
+            perspective: 1500px;
+            transform-style: preserve-3d;
+        }
+
+        .book-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 40%;
+            max-width: 200px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            /* This transition is key for the animation! */
+            transition: transform 0.5s ease, opacity 0.5s ease, z-index 0.5s ease;
+        }
+
+        .book-item img {
+            width: 100%;
+            height: 75%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Positioning and scaling the books */
+        .book-item.active {
+            transform: translateX(0) scale(1.1); /* Center book is larger */
+            opacity: 1;
+            z-index: 4;
+        }
+
+        .book-item.prev {
+            transform: translateX(-70%) scale(0.8); /* Left book */
+            opacity: 0.7;
+            z-index: 3;
+        }
+
+        .book-item.next {
+            transform: translateX(70%) scale(0.8); /* Right book */
+            opacity: 0.7;
+            z-index: 3;
+        }
+
+        /* ## NEW CLASS FOR FAR-LEFT BOOK ## */
+.book-item.prev2 {
+    transform: translateX(-130%) scale(0.6);
+    opacity: 0.4;
+    z-index: 2;
+}
+
+/* ## NEW CLASS FOR FAR-RIGHT BOOK ## */
+.book-item.next2 {
+    transform: translateX(130%) scale(0.6);
+    opacity: 0.4;
+    z-index: 2;
+}
+
+.book-item.hidden-left {
+    transform: translateX(-180%) scale(0.4);
+    opacity: 0;
+    z-index: 1;
+}
+.book-item.hidden-right {
+    transform: translateX(180%) scale(0.4);
+    opacity: 0;
+    z-index: 1;
+}
+
+
+
+        /* New Navigation Arrow Styles */
+        .new-carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 2.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 0;
+            padding-bottom: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .new-carousel-arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev-arrow {
+            left: 10px;
+        }
+
+        .next-arrow {
+            right: 10px;
+        }
